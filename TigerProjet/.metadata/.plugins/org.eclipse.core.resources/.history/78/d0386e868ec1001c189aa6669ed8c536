@@ -1,0 +1,5 @@
+package com.myspring.tiger1.notice.controller;
+
+public class NoticeControllerImpl {
+
+}

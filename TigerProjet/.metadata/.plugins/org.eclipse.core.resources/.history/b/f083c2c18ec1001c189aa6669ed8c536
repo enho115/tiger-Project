@@ -1,0 +1,40 @@
+package com.myspring.tiger1.notice.dao;
+
+import java.util.List;
+
+import org.apache.ibatis.session.SqlSession;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataAccessException;
+import org.springframework.stereotype.Repository;
+
+import com.myspring.tiger1.notice.vo.NoticeVO;
+
+@Repository("noticeDAO")
+public class NoticeDAOImpl implements NoticeDAO{
+
+	@Autowired
+	private SqlSession sqlSession;
+	
+	@Override
+	public NoticeVO selectAllArticlesList() throws DataAccessException {
+		NoticeVO articlesList = sqlSession.selectOne("mapper.notice.selectAllArticlesList");
+		
+		System.out.println(articlesList.getNotice_title());
+		
+		return articlesList;
+	
+//	공지사항 리스트
+	@Override
+	public List<NoticeVO> noticeList() throws DataAccessException{
+		List<NoticeVO> NTList = sqlSession.selectList("mapper.notice.noticeList");
+		return NTList;
+	}
+	
+//	공지사항 상세
+	@Override
+	public NoticeVO noticeDetail(String notice_id) throws DataAccessException {
+		NoticeVO noticeVO = sqlSession.selectOne("mapper.notice.noticeDetail", notice_id);
+		return noticeVO;
+	}
+	
+}

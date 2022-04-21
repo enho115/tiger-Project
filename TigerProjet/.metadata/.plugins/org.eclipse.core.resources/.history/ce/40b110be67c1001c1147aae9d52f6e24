@@ -1,0 +1,4 @@
+jdbc.driver=com.mysql.cj.jdbc.Driver
+jdbc.connectionURL=jdbc:mysql://localhost:3306/tiger1?characterEncoding=UTF-8&serverTimezone=UTC
+jdbc.username=tiger1
+jdbc.password=tiger

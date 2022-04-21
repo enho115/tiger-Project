@@ -1,0 +1,17 @@
+package com.myspring.tiger1.notice.service;
+
+import java.util.List;
+
+import com.myspring.tiger1.notice.vo.NoticeVO;
+
+public interface NoticeService {
+	
+	public NoticeVO listArticles() throws Exception;
+
+	
+//	공지사항 리스트페이지
+	public List<NoticeVO> noticeList() throws Exception;
+	
+//	공지사항 상세
+	public NoticeVO noticeDetail(String notice_id) throws Exception;
+}
